@@ -1,14 +1,23 @@
 import streamlit as st
 
 # Page Configuration
-st.set_page_config(page_title="Mind the Gap | Agile Knowledge Hub", layout="wide")
+st.set_page_config(page_title="Mind the Gap | Knowledge Hub", layout="wide")
+
+# Custom CSS for professional branding
+st.markdown("""
+    <style>
+    .main { background-color: #f8f9fa; }
+    .stAlert { border-radius: 8px; }
+    </style>
+    """, unsafe_allow_html=True)
 
 # Sidebar Navigation
 with st.sidebar:
-    st.title("🧭 Navigation")
-    choice = st.radio("Go to:", [
-        "1. Home: Fast-Track Roadmap",
-        "2. The Architect (CTFR Framework)",
+    st.title("⚖️ Mind the Gap")
+    st.markdown("---")
+    choice = st.radio("Navigation", [
+        "1. Our Mission & Guide Overview",
+        "2. The CTFR Framework & Privacy",
         "3. Case Study: Divorce",
         "4. Case Study: Probate",
         "5. The Auditor: Community Feedback"
@@ -134,3 +143,4 @@ elif choice == "5. The Auditor: Community Feedback":
     st.write("1. **Statutory Check:** Does the Section Number exist on Singapore Statutes Online?")
     st.write("2. **Form Check:** Does the layout match the SGCourts PDF templates?")
     st.write("3. **Date Check:** Is the AI using rules from before the 2024 updates?")
+    
