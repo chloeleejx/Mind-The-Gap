@@ -3,88 +3,133 @@ import streamlit as st
 # Page Configuration
 st.set_page_config(page_title="Mind the Gap | Knowledge Hub", layout="wide")
 
+# Custom CSS for professional branding
+st.markdown("""
+    <style>
+    .main { background-color: #f8f9fa; }
+    .stAlert { border-radius: 8px; }
+    </style>
+    """, unsafe_allow_html=True)
+
 # Sidebar Navigation
 with st.sidebar:
-    st.title("🧭 Navigation")
-    choice = st.radio("Go to:", [
-        "1. Home: Our Mission",
-        "2. The Architect: CTFR Framework",
-        "3. Use Case: Divorce Options",
-        "4. Use Case: Contested Probate",
-        "5. The Vault: Trusted References",
-        "6. The Auditor: Verification Protocol"
+    st.title("⚖️ Mind the Gap")
+    st.markdown("---")
+    choice = st.radio("Navigation", [
+        "1. Our Mission & Guide Overview",
+        "2. The CTFR Framework & Privacy",
+        "3. Case Study: Divorce",
+        "4. Case Study: Probate",
+        "5. Verification Master Checklist"
     ])
 
-if choice == "1. Home: Our Mission":
-    st.title("⚖️ Mind the Gap: Building Bridges to Justice")
+# --- MODULE 1: MISSION ---
+if choice == "1. Our Mission & Guide Overview":
+    st.title("🚀 Why This Guide Exists")
     st.markdown("""
-    Our mission is to empower Singapore's **'Legal Middle'**—those who earn too much for legal aid but find market-rate law firm fees a significant burden[cite: 6, 8, 9].
+    Singapore's **'Legal Middle'**—individuals with a median monthly income of ~$5,775—often fall into a gap: 
+    they earn too much for state-subsidised legal aid but struggle to afford full-service law firm fees[cite: 6, 9].
     
-    ### How this Digital Repository Works:
-    This hub serves as a **Knowledge Infrastructure** to help Self-Represented Persons (SRPs) use Generative AI safely[cite: 22]. We provide:
-    * **Architecture:** Structured prompting frameworks[cite: 24].
-    * **Authority:** Links to official Singaporean legal sources[cite: 30, 62].
-    * **Auditing:** Methods to verify AI output and prevent 'hallucinations'[cite: 59, 63].
+    ### Our Mission
+    To provide a **Knowledge Infrastructure** that empowers Self-Represented Persons (SRPs) to use Generative AI 
+    as a 'paralegal' tool. This reduces administrative costs, allowing users to save their limited 
+    financial resources for high-level legal strategy and advocacy[cite: 22, 38].
+
+    ### How This Guide Works
+    This hub does not replace lawyers. It teaches you to:
+    1. **Architect:** Build high-quality prompts using the CTFR framework[cite: 24].
+    2. **Reference:** Use only authoritative Singaporean legal sources[cite: 30].
+    3. **Audit:** Verify every AI response against trusted primary checklists[cite: 63].
     """)
 
-elif choice == "2. The Architect: CTFR Framework":
-    st.header("🏗️ The Context-Task-Format-Reference (CTFR) Framework")
-    st.write("To get reliable legal research from AI, you must structure your prompt with these four pillars[cite: 24]:")
+# --- MODULE 2: FRAMEWORK & PRIVACY ---
+elif choice == "2. The CTFR Framework & Privacy":
+    st.title("🏗️ The CTFR Framework")
+    st.write("A prompt is only as good as its structure. We use the **Context-Task-Format-Reference** model[cite: 24].")
     
-    col1, col2, col3, col4 = st.columns(4)
-    with col1: st.info("**Context**\n\nWho are you in this case? (e.g., Surviving spouse)")
-    with col2: st.info("**Task**\n\nWhat is the specific goal? (e.g., Understand ADR options)")
-    with col3: st.info("**Format**\n\nHow should the answer look? (e.g., A step-by-step table)")
-    with col4: st.info("**Reference**\n\nWhich Singaporean law applies? (e.g., Women's Charter)")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader("The Four Pillars")
+        st.info("**Context:** Your role (e.g., 'I am an applicant in a contested divorce')[cite: 102].")
+        st.info("**Task:** Specific goal (e.g., 'Summarize the steps for a trial')[cite: 103].")
+        st.info("**Format:** The output style (e.g., 'A 3-column table')[cite: 112].")
+        st.info("**Reference:** The source of truth (e.g., 'Family Justice Rules 2024')[cite: 112].")
+    
+    with col2:
+        st.subheader("🛡️ Privacy & Anonymisation")
+        st.error("**MANDATORY REDACTION**")
+        st.write("""
+        Before inputting data into AI, you **must** remove[cite: 51]:
+        * NRIC / Passport Numbers
+        * Residential Addresses
+        * Bank Account & Financial Details
+        """)
+        st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy[cite: 51, 54].")
 
-    st.warning("⚠️ **MANDATORY REDACTION:** Never input NRICs, residential addresses, or bank account numbers into an AI tool[cite: 51, 54].")
+# --- MODULE 3: DIVORCE ---
+elif choice == "3. Case Study: Divorce":
+    st.title("📑 Area of Law: Divorce")
+    
+    tab1, tab2, tab3 = st.tabs(["Sample Prompt", "Trusted Sources", "Verification Checklist"])
+    
+    with tab1:
+        st.subheader("Initial Research Prompt")
+        st.code("""
+        CONTEXT: I am seeking a divorce in Singapore. My spouse does not agree.
+        TASK: Explain the 'Normal Track' process and the '1-Fact' requirement.
+        FORMAT: Plain English summary with a step-by-step timeline.
+        REFERENCE: Women's Charter 1961 and Singapore Courts (judiciary.gov.sg).
+        """, language="markdown")
+        st.caption("This prompt helps users understand the 'irretrievable breakdown' of marriage[cite: 158].")
 
-elif choice == "3. Use Case: Divorce Options":
-    st.header("📑 Use Case: Navigating Divorce in Singapore")
-    st.write("For those seeking to understand the 'Normal' vs 'Simplified' tracks[cite: 115, 157].")
-    
-    st.subheader("Sample CTFR Prompt [cite: 100-106]")
-    st.code("""
-    CONTEXT: I am seeking a divorce in Singapore.
-    TASK: Explain the options available to me, including alternative dispute resolution (ADR).
-    FORMAT: Use plain English. Provide a table comparing 'Simplified' vs 'Normal' tracks.
-    REFERENCE: Use official government sources like Singapore Courts (judiciary.gov.sg).
-    """)
-    
-    st.subheader("Key Concepts to Verify [cite: 117-127]")
-    st.write("- **Mediation:** Settling disagreements with a neutral third party.")
-    st.write("- **Counselling:** Mandatory if children under 21 are involved.")
-    st.write("- **3-Year Rule:** Requirement to have been married for 3 years before filing.")
+    with tab2:
+        st.subheader("Primary References")
+        st.write("* **Women's Charter 1961** (Section 95: Grounds for Divorce) [cite: 190]")
+        st.write("* **Family Justice Courts Practice Directions 2024** [cite: 198]")
+        st.write("* **MSF Family Assist Portal** [cite: 147]")
 
-elif choice == "4. Use Case: Contested Probate":
-    st.header("📜 Use Case: Challenging a Will (Probate)")
-    st.write("Guidance for challenging testamentary capacity due to dementia[cite: 241].")
-    
-    st.subheader("Sample CTFR Prompt [cite: 240-244]")
-    st.code("""
-    CONTEXT: I am challenging the validity of my father's Will against an Executor in Singapore.
-    TASK: Draft the content for a Summons and a Generic Affidavit.
-    FORMAT: Suitable for addressing the court. Use Forms 54 and 154.
-    REFERENCE: Family Justice Courts Practice Directions 2024.
-    """)
-    
-    st.error("⚠️ **Verification Check:** AI often confuses 'Petitions' (old rules) with 'Originating Applications' (2024 rules). Always verify the Form number[cite: 227, 236].")
+    with tab3:
+        st.subheader("Audit Your AI Output")
+        st.checkbox("Did the AI mention the 3-year marriage rule? [cite: 130]")
+        st.checkbox("Did it distinguish between 'Interim' and 'Final' Judgment? [cite: 140, 141]")
+        st.checkbox("Did it mention the Mandatory Co-Parenting Programme (if children are involved)? [cite: 126]")
 
-elif choice == "5. The Vault: Trusted References":
-    st.header("📚 The Reference Vault")
-    st.write("Always instruct AI to rely **exclusively** on these sources for Singaporean matters[cite: 30, 62]:")
+# --- MODULE 4: PROBATE ---
+elif choice == "4. Case Study: Probate":
+    st.title("📜 Area of Law: Probate")
     
+    tab1, tab2, tab3 = st.tabs(["Sample Prompt", "Trusted Sources", "Verification Checklist"])
+
+    with tab1:
+        st.subheader("Drafting Court Documents")
+        st.code("""
+        CONTEXT: I am challenging a Will in Singapore due to my father's lack of capacity (dementia).
+        TASK: Draft the content for a Summons (Form 154) and an Affidavit (Form 54).
+        FORMAT: Legal drafting style suitable for the Family Justice Courts.
+        REFERENCE: Family Justice Courts Practice Directions 2024.
+        """, language="markdown")
+        st.caption("Using AI for initial drafting reduces the billable hours lawyers spend on basic admin tasks[cite: 38].")
+
+    with tab2:
+        st.subheader("Primary References")
+        st.write("* **Probate and Administration Act 1934**")
+        st.write("* **Intestate Succession Act 1967** (If no Will exists)")
+        st.write("* **Family Justice Rules 2024** [cite: 246]")
+
+    with tab3:
+        st.subheader("Audit Your AI Output")
+        st.checkbox("Is the document titled 'Originating Application' rather than 'Petition'? [cite: 231]")
+        st.checkbox("Has the AI flagged 'Missing Information' like specific medical dates? [cite: 284, 287]")
+        st.checkbox("Does the draft follow the 2024 Practice Direction numbering? [cite: 236]")
+
+# --- MODULE 5: MASTER CHECKLIST ---
+elif choice == "5. Verification Master Checklist":
+    st.title("🔍 The Auditor's Master Protocol")
     st.markdown("""
-    * **Singapore Statutes Online (SSO):** For the Women's Charter, Intestate Succession Act, etc.
-    * **Singapore Courts (Judiciary.gov.sg):** For Practice Directions and Court Forms.
-    * **Family Justice Rules 2024:** For the latest procedural requirements[cite: 198, 231].
+    To mitigate the risk of **Hallucination**[cite: 59], every user must complete this final check before 
+    bringing documents to a law firm for 'Limited Scope' review[cite: 41, 74].
     """)
-    st.link_button("Access Singapore Statutes Online", "https://sso.agc.gov.sg/")
-
-elif choice == "6. The Auditor: Verification Protocol":
-    st.header("🔍 The Auditor: How to Catch Hallucinations")
-    st.write("AI can generate inaccurate case law or procedures[cite: 60]. Use this 3-step audit[cite: 62, 63]:")
     
-    st.success("**Step 1: The Citation Check**\n\nAsk the AI: 'Which specific section of the Singapore law are you citing?' Cross-check it on SSO.")
-    st.success("**Step 2: The Form Match**\n\nDoes the AI's draft match the official Form 162 or Form 54 on the Judiciary website?")
-    st.success("**Step 3: Human-in-the-Loop**\n\nSeek document verification services from a law firm for a 'Limited Scope' review[cite: 46, 65, 74].")
+    st.info("**1. The Citation Trap:** Check if the section numbers cited actually exist on Singapore Statutes Online.")
+    st.info("**2. The 2024 Update:** Ensure the AI isn't using terminology from before October 2024 (e.g., ensure it says 'Applicant' instead of 'Plaintiff')[cite: 227].")
+    st.info("**3. Procedural Reality:** Verify timelines (e.g., the 14-day service deadline) against the Singapore Courts website[cite: 204].")
