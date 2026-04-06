@@ -17,37 +17,24 @@ with st.sidebar:
     st.write("**Version 1.0 (Beta)**")
     st.caption("Focus: Agile Access to Justice")
 
-# --- MODULE 1: HOME & FAST-TRACK ---
-if choice == "1. Home: Fast-Track Roadmap":
-    st.title("⚖️ Mind the Gap: Agile Knowledge Hub")
-    st.subheader("Empowering the 'Legal Middle' through Rapid Iteration")
-    
+# --- MODULE 1: MISSION ---
+if choice == "1. Our Mission & Guide Overview":
+    st.title("🚀 Why This Guide Exists")
     st.markdown("""
-    Instead of a slow, static rollout, our solution follows an **Agile Deployment Model**. 
-    We provide the core framework today and expand based on real-world user demand.
+    Singapore's **'Legal Middle'**—individuals with a median monthly income of ~$5,775—often fall into a gap: 
+    they earn too much for state-subsidised legal aid but struggle to afford full-service law firm fees[cite: 6, 9].
+    
+    ### Our Mission
+    To provide a **Knowledge Infrastructure** that empowers Self-Represented Persons (SRPs) to use Generative AI 
+    as a 'paralegal' tool. This reduces administrative costs, allowing users to save their limited 
+    financial resources for high-level legal strategy and advocacy[cite: 22, 38].
+
+    ### How This Guide Works
+    This hub does not replace lawyers. It teaches you to:
+    1. **Architect:** Build high-quality prompts using the CTFR framework[cite: 24].
+    2. **Reference:** Use only authoritative Singaporean legal sources[cite: 30].
+    3. **Audit:** Verify every AI response against trusted primary checklists[cite: 63].
     """)
-
-    st.info("### 🚀 Our 4-Month Fast-Track Timeline")
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.write("**Month 1**")
-        st.caption("Deploy MVR (Minimum Viable Repository) with Divorce & Probate.")
-    with col2:
-        st.write("**Month 2**")
-        st.caption("Soft Launch with Legal Clinics; collect 'Community Prompts'.")
-    with col3:
-        st.write("**Month 3**")
-        st.caption("Analyze traffic to prioritize the next Area of Law.")
-    with col4:
-        st.write("**Month 4**")
-        st.caption("Full Integration with official Singapore Law portals.")
-
-    st.divider()
-    st.subheader("🗳️ What should we build next?")
-    st.write("We build what the community needs. Vote for the next module:")
-    st.button("Small Claims Tribunal (SCT)")
-    st.button("Employment Disputes")
-    st.button("Personal Injury / Torts")
 
 # --- MODULE 2: FRAMEWORK & PRIVACY ---
 elif choice == "2. The CTFR Framework & Privacy":
