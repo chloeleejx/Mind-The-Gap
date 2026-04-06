@@ -49,34 +49,85 @@ if choice == "1. Home: Fast-Track Roadmap":
     st.button("Employment Disputes")
     st.button("Personal Injury / Torts")
 
-# --- MODULE 2: CTFR FRAMEWORK ---
-elif choice == "2. The Architect (CTFR Framework)":
+# --- MODULE 2: FRAMEWORK & PRIVACY ---
+elif choice == "2. The CTFR Framework & Privacy":
     st.title("🏗️ The CTFR Framework")
-    st.write("The engine behind high-quality AI outputs. We teach users to architect, not just ask.")
+    st.write("A prompt is only as good as its structure. We use the **Context-Task-Format-Reference** model[cite: 24].")
     
-    col_a, col_b = st.columns(2)
-    with col_a:
-        st.markdown("""
-        **1. Context:** Define your legal standing.
-        **2. Task:** Define the specific document or research goal.
-        **3. Format:** Define the layout (e.g., Form 162 style).
-        **4. Reference:** Direct AI to Singapore Statutes Online.
+    col1, col2 = st.columns(2)
+    with col1:
+        st.subheader("The Four Pillars")
+        st.info("**Context:** Your role (e.g., 'I am an applicant in a contested divorce')[cite: 102].")
+        st.info("**Task:** Specific goal (e.g., 'Summarize the steps for a trial')[cite: 103].")
+        st.info("**Format:** The output style (e.g., 'A 3-column table')[cite: 112].")
+        st.info("**Reference:** The source of truth (e.g., 'Family Justice Rules 2024')[cite: 112].")
+    
+    with col2:
+        st.subheader("🛡️ Privacy & Anonymisation")
+        st.error("**MANDATORY REDACTION**")
+        st.write("""
+        Before inputting data into AI, you **must** remove[cite: 51]:
+        * NRIC / Passport Numbers
+        * Residential Addresses
+        * Bank Account & Financial Details
         """)
-    with col_b:
-        st.error("⚠️ **MANDATORY DATA PRIVACY**")
-        st.write("Never input NRICs or bank details. Use our 'Anonymisation Protocol' below.")
-        st.code("Prompt: 'Replace all NRIC numbers with [NRIC] before processing.'")
+        st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy[cite: 51, 54].")
 
-# --- MODULES 3 & 4: CASE STUDIES (Existing content remains here) ---
+# --- MODULE 3: DIVORCE ---
 elif choice == "3. Case Study: Divorce":
     st.title("📑 Area of Law: Divorce")
-    st.write("Focusing on the Women's Charter and 2024 Practice Directions.")
-    st.code("CONTEXT: I am seeking a divorce... REFERENCE: Women's Charter 1961...")
+    
+    tab1, tab2, tab3 = st.tabs(["Sample Prompt", "Trusted Sources", "Verification Checklist"])
+    
+    with tab1:
+        st.subheader("Initial Research Prompt")
+        st.code("""
+        CONTEXT: I am seeking a divorce in Singapore. My spouse does not agree.
+        TASK: Explain the 'Normal Track' process and the '1-Fact' requirement.
+        FORMAT: Plain English summary with a step-by-step timeline.
+        REFERENCE: Women's Charter 1961 and Singapore Courts (judiciary.gov.sg).
+        """, language="markdown")
+        st.caption("This prompt helps users understand the 'irretrievable breakdown' of marriage[cite: 158].")
 
+    with tab2:
+        st.subheader("Primary References")
+        st.write("* **Women's Charter 1961** (Section 95: Grounds for Divorce) [cite: 190]")
+        st.write("* **Family Justice Courts Practice Directions 2024** [cite: 198]")
+        st.write("* **MSF Family Assist Portal** [cite: 147]")
+
+    with tab3:
+        st.subheader("Audit Your AI Output")
+        st.checkbox("Did the AI mention the 3-year marriage rule? [cite: 130]")
+        st.checkbox("Did it distinguish between 'Interim' and 'Final' Judgment? [cite: 140, 141]")
+        st.checkbox("Did it mention the Mandatory Co-Parenting Programme (if children are involved)? [cite: 126]")
+
+# --- MODULE 4: PROBATE ---
 elif choice == "4. Case Study: Probate":
     st.title("📜 Area of Law: Probate")
-    st.write("Navigating Form 162 and the Intestate Succession Act.")
-    st.code("CONTEXT: I am an executor... REFERENCE: Family Justice Rules 2024...")
+    
+    tab1, tab2, tab3 = st.tabs(["Sample Prompt", "Trusted Sources", "Verification Checklist"])
+
+    with tab1:
+        st.subheader("Drafting Court Documents")
+        st.code("""
+        CONTEXT: I am challenging a Will in Singapore due to my father's lack of capacity (dementia).
+        TASK: Draft the content for a Summons (Form 154) and an Affidavit (Form 54).
+        FORMAT: Legal drafting style suitable for the Family Justice Courts.
+        REFERENCE: Family Justice Courts Practice Directions 2024.
+        """, language="markdown")
+        st.caption("Using AI for initial drafting reduces the billable hours lawyers spend on basic admin tasks[cite: 38].")
+
+    with tab2:
+        st.subheader("Primary References")
+        st.write("* **Probate and Administration Act 1934**")
+        st.write("* **Intestate Succession Act 1967** (If no Will exists)")
+        st.write("* **Family Justice Rules 2024** [cite: 246]")
+
+    with tab3:
+        st.subheader("Audit Your AI Output")
+        st.checkbox("Is the document titled 'Originating Application' rather than 'Petition'? [cite: 231]")
+        st.checkbox("Has the AI flagged 'Missing Information' like specific medical dates? [cite: 284, 287]")
+        st.checkbox("Does the draft follow the 2024 Practice Direction numbering? [cite: 236]")
 
 # --- MODULE 5: THE AUDITOR & FEEDBACK ---
 elif choice == "5. The Auditor: Community Feedback":
