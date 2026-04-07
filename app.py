@@ -61,13 +61,10 @@ elif choice == "2. Structuring a Good Prompt":
         * Where did it happen?
         """)
         st.write("""
-        It is a good idea to include the following:
-        * Who are you? Who is involved?
-        * What happened? 
-        * When did it happen?
-        * Where did it happen?
-        
-        **Example:** I am starting an action **(who am I)** in Singapore Court **(where)** to challenge the validity of my father's Will against the Executor named in the Will **(who is involved)**. My father passed away recently leaving a Will dated 1 January 2026 **(when)**. At the time of execution, my father was suffering from dementia and hence lacked the necessary testamentary capacity. The Executor maintained the Will is valid and that my father was of sound mind when executing the Will **(what happened)**. 
+        **Example:** I am starting an action **(who am I)** in Singapore Court **(where)** to challenge the validity of my father's Will against the Executor named in the Will **(who is involved)**. 
+        My father passed away recently leaving a Will dated 1 January 2026 **(when)**. 
+        **(what happened)** At the time of execution, my father was suffering from dementia and hence lacked the necessary testamentary capacity. 
+        The Executor maintained the Will is valid and that my father was of sound mind when executing the Will. 
         """)
 
         st.error("**MANDATORY REDACTION**")
