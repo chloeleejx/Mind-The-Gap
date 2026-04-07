@@ -28,26 +28,70 @@ with st.sidebar:
 # --- MODULE 1: MISSION ---
 if choice == "1. Why This Guide Exists":
     st.title("Why This Guide Exists")
+    
+    # Using a container to group the problem statement
+    with st.container():
+        st.markdown("""
+        Middle-income earners in Singapore often face a **justice gap**: 
+        they earn too much for state-subsidised legal aid but struggle to afford full-service law firm fees.
+        """)
+        
+        st.error("""
+        **The SRP Challenge:** Many individuals proceed as Self-Represented Persons (SRPs), where they must:
+        * Understand complex legal principles.
+        * Comply strictly with procedural rules.
+        * Represent themselves in court hearings.
+        
+        In this role, you are held to the same professional standards as lawyers. In the past, many gave up, feeling this was an 'impossible mission' due to the overwhelming time and cost involved.
+        """)
+
+    # Transition to AI
+    st.subheader("The AI Revolution")
     st.markdown("""
-    Middle-income earners in Singapore often face a justic gap: 
-    they earn too much for state-subsidised legal aid but struggle to afford full-service law firm fees.
-    As a result, many individuals proceeded as Self-Represented Persons (SRPs), for which they must understand legal principles, comply with procedural rules, and represent themselves in court hearings, 
-    while being held to the same standards as lawyers. 
-    In the past, many would have given up as those seem like impossible mission with too much time and cost involved.
-    The rise of generative AI changes everything. Using AI for legal research is not prohibited provided you assume full responsiblity for verifying information submitted to the Court. 
-    But do you know how to use it effectively and reduce the time taken to find what you need and actually understand it?
-    More importantly, how do you even know the information is correct and without knowing it, are you willing to risk including wrong information in your court documents?
+    The rise of generative AI changes everything. Using AI for legal research is not prohibited, provided you assume **full responsibility** for verifying information submitted to the Court. 
     
-    ### Our Mission
-    This Guide aims to provide a **Knowledge Infrastructure** that empowers you to use generative AI 
-    more effectively at the initial stage of your case so that you could save your limited financial resources for high-level legal strategy and advocacy.
+    **However, critical questions remain:**
+    * Do you know how to use AI effectively to reduce research time?
+    * Do you truly understand the output it generates?
+    * Most importantly, how do you know the information is **correct**? 
     
-    ### How This Guide Works
-    It teaches you to:
-    1. **Craft:** Build high-quality prompts using the CTFR framework.
-    2. **Refer:** Use only authoritative Singaporean legal sources.
-    3. **Check:** Verify every AI response against trusted primary checklists.
+    Without verification, are you willing to risk including wrong information in your court documents?
     """)
+
+    # Mission and Framework using Columns for better flow
+    st.divider()
+    col_mission, col_how = st.columns(2)
+
+    with col_mission:
+        st.subheader("🎯 Our Mission")
+        st.write("""
+        This Guide provides the **Knowledge Infrastructure** to empower you to use generative AI 
+        effectively at the initial stage of your case. By doing the administrative heavy lifting 
+        yourself, you can save your limited financial resources for high-level legal strategy and advocacy.
+        """)
+
+    with col_how:
+        st.subheader("🛠️ How This Guide Works")
+        st.info("""
+        **1. Craft:** Build high-quality prompts using the **CTFR framework**.
+        
+        **2. Refer:** Ground your AI in authoritative **Singaporean legal sources**.
+        
+        **3. Check:** Audit every response against **trusted primary checklists**.
+        """)
+
+    # Agile Feedback Loop
+    st.divider()
+    st.subheader("🗳️ What should we build next?")
+    st.write("Our 'Fast-Track' model relies on user demand. Vote for the next area of law:")
+    
+    col_btn1, col_btn2, col_btn3 = st.columns(3)
+    with col_btn1: 
+        st.button("SCT Disputes", use_container_width=True)
+    with col_btn2: 
+        st.button("Employment Disputes", use_container_width=True)
+    with col_btn3: 
+        st.button("Personal Injury / Torts", use_container_width=True)
 
 # --- MODULE 2: FRAMEWORK & PRIVACY ---
 elif choice == "2. Structuring a Good Prompt":
