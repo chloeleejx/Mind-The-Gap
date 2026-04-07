@@ -52,7 +52,14 @@ elif choice == "2. Structuring a Good Prompt":
     col1, col2 = st.columns(2)
     with col1:
         st.subheader("Context")
-        st.info("**Tell your story.**")
+        st.info("""
+        **Tell your story.**
+        It is a good idea to include the following:
+        * Who are you? Who is involved?
+        * What happened? 
+        * When did it happen?
+        * Where did it happen?
+        """)
         st.write("""
         It is a good idea to include the following:
         * Who are you? Who is involved?
