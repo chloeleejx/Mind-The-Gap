@@ -61,6 +61,7 @@ elif choice == "2. The CTFR Framework & Privacy":
         * What happened? 
         * When did it happen?
         * Where did it happen?
+        
         Example: I am starting an action (who am I) in Singapore Court (where) to challenge the validity of my father's Will against the Executor named in the Will (who is involved). My father passed away recently leaving a Will dated 1 January 2026 (when). At the time of execution, my father was suffering from dementia and hence lacked the necessary testamentary capacity. The Executor maintained the Will is valid and that my father was of sound mind when executing the Will. 
         """)
         
