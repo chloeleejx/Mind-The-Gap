@@ -17,14 +17,13 @@ with st.sidebar:
     st.markdown("---")
     choice = st.radio("Navigation", [
         "1. Our Mission & Guide Overview",
-        "2. The CTFR Framework & Privacy",
+        "2. Structuring a Good Prompt",
         "3. Case Study: Divorce",
         "4. Case Study: Probate",
         "5. The Auditor: Community Feedback"
     ])
     st.markdown("---")
     st.write("**Version 1.0 (Beta)**")
-    st.caption("Focus: Agile Access to Justice")
 
 # --- MODULE 1: MISSION ---
 if choice == "1. Our Mission & Guide Overview":
@@ -46,13 +45,13 @@ if choice == "1. Our Mission & Guide Overview":
     """)
 
 # --- MODULE 2: FRAMEWORK & PRIVACY ---
-elif choice == "2. The CTFR Framework & Privacy":
+elif choice == "2. Structuring a Good Prompt":
     st.title("Structuring a Good Prompt using the CTFR Framework")
     st.write("A prompt is only as good as its structure.Follow the **Context-Task-Format-Reference** framework to structure a good prompt.")
     
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader("The Four Pillars")
+        st.subheader("The CTFR Framework")
         
         st.info("**Context:** Tell your story.")
         st.write("""
