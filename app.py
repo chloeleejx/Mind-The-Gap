@@ -62,11 +62,11 @@ elif choice == "2. The CTFR Framework & Privacy":
         * When did it happen?
         * Where did it happen?
         
-        Example: I am starting an action (who am I) in Singapore Court (where) to challenge the validity of my father's Will against the Executor named in the Will (who is involved). My father passed away recently leaving a Will dated 1 January 2026 (when). At the time of execution, my father was suffering from dementia and hence lacked the necessary testamentary capacity. The Executor maintained the Will is valid and that my father was of sound mind when executing the Will. 
+        **Example:** I am starting an action **(who am I)** in Singapore Court **(where)** to challenge the validity of my father's Will against the Executor named in the Will **(who is involved)**. My father passed away recently leaving a Will dated 1 January 2026 **(when)**. At the time of execution, my father was suffering from dementia and hence lacked the necessary testamentary capacity. The Executor maintained the Will is valid and that my father was of sound mind when executing the Will **(what happened)**. 
         """)
         
-        st.info("**Task:** Specify what do you want from the AI. Use action verbs such as 'Explain','Summarise','Draft' for better results.")
-        st.write("Example: **Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
+        st.info("**Task:** Specify what do you want from the AI. Use action verbs such as 'Explain', 'Summarise', 'Draft' for better results.")
+        st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
         
         st.info("**Format:** The output style (e.g., 'A 3-column table')[cite: 112].")
         st.info("**Reference:** The source of truth (e.g., 'Family Justice Rules 2024')[cite: 112].")
