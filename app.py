@@ -38,11 +38,11 @@ if choice == "1. Why This Guide Exists":
         
         st.error("""
         **The SRP Challenge:** Many individuals proceed as Self-Represented Persons (SRPs), where they must:
-        * Understand complex legal principles.
-        * Comply strictly with procedural rules.
-        * Represent themselves in court hearings.
+        * Understand legal principles
+        * Comply with procedural rules
+        * Represent themselves in court hearings
         
-        In this role, you are held to the same professional standards as lawyers. In the past, many gave up, feeling this was an 'impossible mission' due to the overwhelming time and cost involved.
+        In this role, you are held to the same standards as lawyers. In the past, many gave up, feeling this was an 'impossible mission' due to the overwhelming time and cost involved.
         """)
 
     # Transition to AI
@@ -87,11 +87,11 @@ if choice == "1. Why This Guide Exists":
     
     col_btn1, col_btn2, col_btn3 = st.columns(3)
     with col_btn1: 
-        st.button("SCT Disputes", use_container_width=True)
+        st.button("Small Claims Diputes", use_container_width=True)
     with col_btn2: 
         st.button("Employment Disputes", use_container_width=True)
     with col_btn3: 
-        st.button("Personal Injury / Torts", use_container_width=True)
+        st.button("Criminal Law", use_container_width=True)
 
 # --- MODULE 2: FRAMEWORK & PRIVACY ---
 elif choice == "2. Structuring a Good Prompt":
