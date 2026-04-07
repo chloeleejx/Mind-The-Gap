@@ -254,7 +254,7 @@ elif choice == "5. Prompt Library & Community Hub":
             why_helpful = st.text_area("Why was this helpful? (e.g. 'It helped me understand the 3-year rule')")
             link = st.text_input("Link to Conversation or Screenshot URL (Optional):")
             
-            st.warning("🔒 **Editor Guarantee:** Our team will manually review all submissions to ensure NRICs and private details are removed before publishing.")
+            st.warning("**Reminder:** Please remove personal data and sensitive information before submitting.")
             
             submitted = st.form_submit_button("Submit for Review")
             if submitted:
