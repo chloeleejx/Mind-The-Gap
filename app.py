@@ -21,7 +21,7 @@ with st.sidebar:
         "2. Structuring a Good Prompt",
         "3. Case Study: Divorce",
         "4. Case Study: Probate",
-        "5. Community Feedback"
+        "5. Prompt Library & Community Hub"
     ])
     st.markdown("---")
     st.write("**Version 1.0 (Beta)**")
