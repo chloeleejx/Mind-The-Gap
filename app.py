@@ -63,23 +63,22 @@ elif choice == "2. Structuring a Good Prompt":
         
         **Example:** I am starting an action **(who am I)** in Singapore Court **(where)** to challenge the validity of my father's Will against the Executor named in the Will **(who is involved)**. My father passed away recently leaving a Will dated 1 January 2026 **(when)**. At the time of execution, my father was suffering from dementia and hence lacked the necessary testamentary capacity. The Executor maintained the Will is valid and that my father was of sound mind when executing the Will **(what happened)**. 
         """)
-        
-        st.info("**Task:** Specify what do you want from the AI. Use action verbs such as 'Explain', 'Summarise', 'Draft' for better results.")
-        st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
-        
-        st.info("**Format:** The output style (e.g., 'A 3-column table')[cite: 112].")
-        st.info("**Reference:** The source of truth (e.g., 'Family Justice Rules 2024')[cite: 112].")
-    
-    with col2:
-        st.subheader("🛡️ Privacy & Anonymisation")
+
         st.error("**MANDATORY REDACTION**")
         st.write("""
-        Before inputting data into AI, you **must** remove[cite: 51]:
+        Before inputting data into AI, you **must** remove personal data and sensitive information including:
         * NRIC / Passport Numbers
         * Residential Addresses
         * Bank Account & Financial Details
         """)
-        st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy[cite: 51, 54].")
+        st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy.")
+
+    with col2:
+        st.info("**Task:** Specify what do you want from the AI. Use action verbs such as 'Explain', 'Summarise', 'Draft' for better results.")
+        st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
+        
+        st.info("**Format:** The output style (e.g., 'A 3-column table').")
+        st.info("**Reference:** The source of truth (e.g., 'Family Justice Rules 2024').")
 
 # --- MODULE 3: DIVORCE ---
 elif choice == "3. Case Study: Divorce":
