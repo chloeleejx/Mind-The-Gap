@@ -47,13 +47,12 @@ if choice == "1. Our Mission & Guide Overview":
 # --- MODULE 2: FRAMEWORK & PRIVACY ---
 elif choice == "2. Structuring a Good Prompt":
     st.title("Structuring a Good Prompt using the CTFR Framework")
-    st.write("A prompt is only as good as its structure.Follow the **Context-Task-Format-Reference** framework to structure a good prompt.")
+    st.write("A prompt is only as good as its structure. Follow the **Context-Task-Format-Reference** framework to structure a good prompt.")
     
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader("The CTFR Framework")
-        
-        st.info("**Context:** Tell your story.")
+        st.subheader("Context")
+        st.info("**Tell your story.**")
         st.write("""
         It is a good idea to include the following:
         * Who are you? Who is involved?
@@ -74,11 +73,15 @@ elif choice == "2. Structuring a Good Prompt":
         st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy.")
 
     with col2:
-        st.info("**Task:** Specify what do you want from the AI. Use action verbs such as 'Explain', 'Summarise', 'Draft' for better results.")
+        st.subheader("Task")
+        st.info("**Specify what do you want from the AI.** Use **action verbs** such as 'Explain', 'Summarise', 'Draft' for better results.")
         st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
-        
-        st.info("**Format:** The output style (e.g., 'A 3-column table').")
-        st.info("**Reference:** The source of truth (e.g., 'Family Justice Rules 2024').")
+
+        st.subheader("Format")
+        st.info("**The output style (e.g., 'A 3-column table').**")
+
+        st.subheader("Reference")
+        st.info("**The source of truth (e.g., 'Family Justice Rules 2024').**")
 
 # --- MODULE 3: DIVORCE ---
 elif choice == "3. Case Study: Divorce":
