@@ -16,32 +16,37 @@ with st.sidebar:
     st.title("⚖️ Mind the Gap")
     st.markdown("---")
     choice = st.radio("Navigation", [
-        "1. Our Mission & Guide Overview",
+        "1. Why This Guide Exists",
         "2. Structuring a Good Prompt",
         "3. Case Study: Divorce",
         "4. Case Study: Probate",
-        "5. The Auditor: Community Feedback"
+        "5. Community Feedback"
     ])
     st.markdown("---")
     st.write("**Version 1.0 (Beta)**")
 
 # --- MODULE 1: MISSION ---
-if choice == "1. Our Mission & Guide Overview":
+if choice == "1. Why This Guide Exists":
     st.title("🚀 Why This Guide Exists")
     st.markdown("""
-    Singapore's **'Legal Middle'**—individuals with a median monthly income of ~$5,775—often fall into a gap: 
-    they earn too much for state-subsidised legal aid but struggle to afford full-service law firm fees[cite: 6, 9].
+    Middle-income earners in Singapore often face a justic gap: 
+    they earn too much for state-subsidised legal aid but struggle to afford full-service law firm fees.
+    As a result, many individuals proceeded as Self-Represented Persons (SRPs), for which they must understand legal principles, comply with procedural rules, and represent themselves in court hearings, 
+    while being held to the same standards as lawyers. 
+    In the past, many would have given up as those seem like impossible mission with too much time and cost involved.
+    The rise of generative AI changes everything. Using AI for legal research is not prohibited provided you assume full responsiblity for verifying information submitted to the Court. 
+    But do you know how to use it effectively and reduce the time taken to find what you need and actually understand it?
+    More importantly, how do you even know the information is correct and without knowing it, are you willing to risk including wrong information in your court documents?
     
     ### Our Mission
-    To provide a **Knowledge Infrastructure** that empowers Self-Represented Persons (SRPs) to use Generative AI 
-    as a 'paralegal' tool. This reduces administrative costs, allowing users to save their limited 
-    financial resources for high-level legal strategy and advocacy[cite: 22, 38].
-
+    This Guide aims to provide a **Knowledge Infrastructure** that empowers you to use generative AI 
+    more effectively at the initial stage of your case so that you could save your limited financial resources for high-level legal strategy and advocacy.
+    
     ### How This Guide Works
-    This hub does not replace lawyers. It teaches you to:
-    1. **Architect:** Build high-quality prompts using the CTFR framework[cite: 24].
-    2. **Reference:** Use only authoritative Singaporean legal sources[cite: 30].
-    3. **Audit:** Verify every AI response against trusted primary checklists[cite: 63].
+    It teaches you to:
+    1. **Craft:** Build high-quality prompts using the CTFR framework.
+    2. **Refer:** Use only authoritative Singaporean legal sources.
+    3. **Check:** Verify every AI response against trusted primary checklists.
     """)
 
 # --- MODULE 2: FRAMEWORK & PRIVACY ---
@@ -149,12 +154,12 @@ elif choice == "4. Case Study: Probate":
         st.checkbox("Has the AI flagged 'Missing Information' like specific medical dates? [cite: 284, 287]")
         st.checkbox("Does the draft follow the 2024 Practice Direction numbering? [cite: 236]")
 
-# --- MODULE 5: THE AUDITOR & FEEDBACK ---
-elif choice == "5. The Auditor: Community Feedback":
-    st.title("🔍 The Auditor & Community Loop")
+# --- MODULE 5: COMMUNITY FEEDBACK ---
+elif choice == "5. Community Feedback":
+    st.title("Community Feedback")
     
     st.markdown("""
-    Legal AI is only safe when it is **Verified**. This page facilitates the 
+    Legal AI is only safe when it is **verified**. This page facilitates the 
     'Crowdsourced Audit' to keep the repository accurate.
     """)
 
