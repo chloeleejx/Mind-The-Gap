@@ -47,13 +47,16 @@ if choice == "1. Our Mission & Guide Overview":
 
 # --- MODULE 2: FRAMEWORK & PRIVACY ---
 elif choice == "2. The CTFR Framework & Privacy":
-    st.title("Structuring a Good Prompt using the CFTR Framework")
+    st.title("Structuring a Good Prompt using the CTFR Framework")
     st.write("A prompt is only as good as its structure.Follow the **Context-Task-Format-Reference** framework to structure a good prompt.")
     
     col1, col2 = st.columns(2)
     with col1:
         st.subheader("The Four Pillars")
-        st.info("**Context:** Your role (e.g., 'I am an applicant in a contested divorce')[cite: 102].")
+        st.info("""**Context:** Tell AI your story using the 5W1H. Examples of information to include:
+        • Who are you? Who is involved?
+        • What happened? 
+        • When did it happen?""")
         st.info("**Task:** Specific goal (e.g., 'Summarize the steps for a trial')[cite: 103].")
         st.info("**Format:** The output style (e.g., 'A 3-column table')[cite: 112].")
         st.info("**Reference:** The source of truth (e.g., 'Family Justice Rules 2024')[cite: 112].")
