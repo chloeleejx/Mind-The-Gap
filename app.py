@@ -53,7 +53,7 @@ elif choice == "2. The CTFR Framework & Privacy":
     col1, col2 = st.columns(2)
     with col1:
         st.subheader("The Four Pillars")
-        st.info("""**Context:** Tell AI your story using the 5W1H. Examples of information to include:
+        st.write("""**Context:** Tell AI your story using the 5W1H. Examples of information to include:
         * Who are you? Who is involved?
         * What happened? 
         * When did it happen?
