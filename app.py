@@ -36,7 +36,7 @@ if choice == "1. Why This Guide Exists":
         they earn too much for state-subsidised legal aid but struggle to afford full-service law firm fees.
         """)
         
-        st.error("""
+        st.info("""
         **The SRP Challenge:** Many individuals proceed as Self-Represented Persons (SRPs), where they must:
         * Understand legal principles
         * Comply with procedural rules
@@ -47,9 +47,9 @@ if choice == "1. Why This Guide Exists":
 
     # Transition to AI
     st.subheader("The AI Revolution")
-    st.markdown("""
-    The rise of generative AI changes everything. Using AI for legal research is not prohibited, provided you assume **full responsibility** for verifying information submitted to the Court. 
-    
+    st.markdown("The rise of generative AI changes everything. Using AI for legal research is not prohibited, provided you assume **full responsibility** for verifying information submitted to the Court.") 
+
+    st.error("""
     **However, critical questions remain:**
     * Do you know how to use AI effectively to reduce research time?
     * Do you truly understand the output it generates?
