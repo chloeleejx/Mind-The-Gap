@@ -27,7 +27,7 @@ with st.sidebar:
 
 # --- MODULE 1: MISSION ---
 if choice == "1. Why This Guide Exists":
-    st.title("🚀 Why This Guide Exists")
+    st.title("Why This Guide Exists")
     st.markdown("""
     Middle-income earners in Singapore often face a justic gap: 
     they earn too much for state-subsidised legal aid but struggle to afford full-service law firm fees.
