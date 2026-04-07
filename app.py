@@ -48,7 +48,7 @@ if choice == "1. Our Mission & Guide Overview":
 # --- MODULE 2: FRAMEWORK & PRIVACY ---
 elif choice == "2. The CTFR Framework & Privacy":
     st.title("Structuring a Good Prompt using the CFTR Framework")
-    st.write("A prompt is only as good as its structure.\nFollow the **Context-Task-Format-Reference** framework to structure a good prompt.")
+    st.write("A prompt is only as good as its structure.Follow the **Context-Task-Format-Reference** framework to structure a good prompt.")
     
     col1, col2 = st.columns(2)
     with col1:
