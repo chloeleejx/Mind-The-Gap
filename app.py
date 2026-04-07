@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd # For handling the library data
 
 # Page Configuration
 st.set_page_config(page_title="Mind the Gap | Knowledge Hub", layout="wide")
@@ -24,6 +25,15 @@ with st.sidebar:
     ])
     st.markdown("---")
     st.write("**Version 1.0 (Beta)**")
+
+# --- MOCK DATA FOR THE LIBRARY ---
+# In a real app, this would come from a database.
+prompt_data = [
+    {"Area": "Divorce", "Use Case": "Legal Research", "Likes": 24, "Prompt": "CONTEXT: I am seeking a divorce... TASK: Explain the 1-fact requirement..."},
+    {"Area": "Probate", "Use Case": "Legal Drafting", "Likes": 15, "Prompt": "CONTEXT: I am an executor... TASK: Draft Form 162 for Originating Application..."},
+    {"Area": "Divorce", "Use Case": "Summarisation", "Likes": 38, "Prompt": "CONTEXT: I have a 20-page mediation report... TASK: Summarize the key custody disputes..."},
+]
+df = pd.DataFrame(prompt_data)
 
 # --- MODULE 1: MISSION ---
 if choice == "1. Why This Guide Exists":
@@ -198,22 +208,54 @@ elif choice == "4. Case Study: Probate":
         st.checkbox("Has the AI flagged 'Missing Information' like specific medical dates? [cite: 284, 287]")
         st.checkbox("Does the draft follow the 2024 Practice Direction numbering? [cite: 236]")
 
-# --- MODULE 5: COMMUNITY FEEDBACK ---
-elif choice == "5. Community Feedback":
-    st.title("Community Feedback")
+# --- MODULE 5: COMMUNITY HUB & LIBRARY ---
+elif choice == "5. Prompt Library & Community Hub":
+    st.title("Prompt Library & Community Hub")
     
-    st.markdown("""
-    Legal AI is only safe when it is **verified**. This page facilitates the 
-    'Crowdsourced Audit' to keep the repository accurate.
-    """)
+    tab_library, tab_submit = st.tabs(["📚 Prompt Library", "📤 Submit a Prompt"])
 
-    with st.expander("📢 Report a 'Hallucination' or AI Error"):
-        st.text_input("Which AI tool were you using?")
-        st.text_area("What was the incorrect information provided?")
-        st.button("Submit for Legal Review")
+    # --- TAB 1: SEARCHABLE LIBRARY ---
+    with tab_library:
+        st.subheader("Editor-Approved Prompts")
+        st.write("Browse and filter prompts that have been verified by our legal editors for accuracy and safety.")
 
-    st.success("### How to Verify (The 3-Step Audit)")
-    st.write("1. **Statutory Check:** Does the Section Number exist on Singapore Statutes Online?")
-    st.write("2. **Form Check:** Does the layout match the SGCourts PDF templates?")
-    st.write("3. **Date Check:** Is the AI using rules from before the 2024 updates?")
-    
+        # Search and Filter Row
+        col_search, col_filter_law, col_filter_use = st.columns([2, 1, 1])
+        with col_search:
+            search_query = st.text_input("Search prompts...", placeholder="e.g. 'Form 162' or 'Mediation'")
+        with col_filter_law:
+            law_filter = st.selectbox("Area of Law", ["All", "Divorce", "Probate"])
+        with col_filter_use:
+            use_filter = st.selectbox("Use Case", ["All", "Legal Research", "Legal Drafting", "Summarisation"])
+
+        # Filter Logic
+        filtered_df = df
+        if law_filter != "All":
+            filtered_df = filtered_df[filtered_df['Area'] == law_filter]
+        if use_filter != "All":
+            filtered_df = filtered_df[filtered_df['Use Case'] == use_filter]
+        if search_query:
+            filtered_df = filtered_df[filtered_df['Prompt'].str.contains(search_query, case=False)]
+
+        # Display Prompts
+        for index, row in filtered_df.iterrows():
+            with st.expander(f"📌 {row['Area']} - {row['Use Case']} ({row['Likes']} 👍)"):
+                st.code(row['Prompt'], language="markdown")
+                st.button(f"Like this Prompt", key=f"like_{index}")
+                st.caption("Verified by Editor on: 05 April 2026")
+
+    # --- TAB 2: SUBMISSION PORTAL ---
+    with tab_submit:
+        st.subheader("Share Your Success")
+        st.write("Found a prompt that worked? Submit it here. Our editors will review, anonymise, and publish it to help others.")
+        
+        with st.form("submission_form"):
+            user_prompt = st.text_area("Paste your Prompt here:")
+            why_helpful = st.text_area("Why was this helpful? (e.g. 'It helped me understand the 3-year rule')")
+            link = st.text_input("Link to Conversation or Screenshot URL (Optional):")
+            
+            st.warning("🔒 **Editor Guarantee:** Our team will manually review all submissions to ensure NRICs and private details are removed before publishing.")
+            
+            submitted = st.form_submit_button("Submit for Review")
+            if submitted:
+                st.success("Thank you! Your prompt has been sent to our editors for verification.")
