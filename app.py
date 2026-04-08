@@ -128,13 +128,15 @@ elif choice == "2. Structuring a Good Prompt":
         The Executor maintained the Will is valid and that my father was of sound mind when executing the Will. 
         """)
 
-        st.error("**MANDATORY REDACTION**")
-        st.write("""
-        Before inputting data into AI, you **must** remove personal data and sensitive information including:
+        st.error("""
+        **MANDATORY REDACTION**
+        
+        Before inputting data into AI, you **MUST** remove **personal data** and **sensitive information** including:
         * NRIC / Passport Numbers
         * Residential Addresses
         * Bank Account & Financial Details
         """)
+        
         st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy.")
 
         st.write("## Format")
