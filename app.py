@@ -147,10 +147,42 @@ elif choice == "2. Structuring a Good Prompt":
         st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
 
         st.subheader("Format")
-        st.info("**The output style (e.g., 'A 3-column table').**")
+        st.info("""
+        **Set your expectations. How should the AI respond to best meet your needs?**
+
+        Consider including **"use plain English"** when asking AI to explain the laws to avoid unnecessary burden by legal jargon.
+        
+        Consider to specify the following based on your needs: 
+        * Language
+        * Visual aids
+        * Level of depth
+        * Tone of voice
+        * Word limit
+        """)
+        st.write("**Example:** Please use language suitable for addressing the Court.")
+
+        st.write("### 🛠️ Tailor your output:")
+        # Using columns here makes the list feel more professional and less like a 'notebook'
+        col_f1, col_f2 = st.columns(2)
+
+        with col_f1:
+            st.markdown("""
+            * **Language & Tone:** Specify 'Plain English' for understanding or 'Formal Legal Tone' for court drafts.
+            * **Visual Aids:** Request 'a 3-column table', 'a step-by-step timeline', or 'a bulleted checklist'.
+            * **Word Limit:** Set a '200-word executive summary' to avoid long, rambling AI responses.
+            """)
+
+        with col_f2:
+            st.markdown("""
+            * **Level of Depth:** Ask for a 'high-level overview' for initial research or a 'comprehensive clause-by-clause analysis'.
+            * **Target Audience:** Tell the AI to write 'for a judge' or 'for a layperson'.
+            """)
+
+        st.success("**Pro-Tip:** If you are preparing for a court hearing, ask the AI to format its response as 'speaking notes' to help you present your points clearly.")
 
         st.subheader("Reference")
-        st.info("**The source of truth (e.g., 'Family Justice Rules 2024').**")
+        st.info("**The source of truth.**")
+        st.write("**Example:** Base your drafts on the forms uploaded. [Upload relevant court forms]")
 
 # --- MODULE 3: DIVORCE ---
 elif choice == "3. Case Study: Divorce":
