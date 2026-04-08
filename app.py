@@ -168,54 +168,87 @@ elif choice == "3. Reference Library":
     st.title("Reference Library")
     st.write("Select an area of law to find authoritative references and guidance on how to use them in your AI prompts.")
 
-    tab_divorce, tab_probate, tab_general = st.tabs(["Divorce", "Probate", "General Civil"])
+    # Creating the Tabs
+    tab_overview, tab_divorce, tab_probate = st.tabs(["Overview", "Divorce", "Probate"])
 
+    # --- TAB 1: OVERVIEW ---
+    with tab_overview:
+        st.write("## How to use the Library")
+        st.markdown("""
+        To reduce 'AI hallucinations,' your prompt should always direct the AI to a specific **Source of Truth**. 
+        This module organizes references into two categories:
+        1. **Statutory Laws:** The 'What' (The actual laws and rights).
+        2. **Court Forms & Directions:** The 'How' (How to file and format documents).
+        """)
+
+        col_sso, col_courts = st.columns(2)
+        with col_sso:
+            st.info("### Singapore Statutes Online (SSO)")
+            st.write("""
+            **What it is:** The official government portal for all Singapore legislation.
+            **When to use:** If you are unsure of the specific Act, tell the AI: 
+            *'Refer only to the most recent statutes on sso.agc.gov.sg.'*
+            """)
+            st.link_button("Go to SSO", "https://sso.agc.gov.sg/")
+
+        with col_courts:
+            st.info("### Singapore Courts Website")
+            st.write("""
+            **What it is:** The central resource for Judiciary forms and Practice Directions.
+            **When to use:** When you need the AI to draft a document or explain court procedure. 
+            Tell the AI: *'Refer to judiciary.gov.sg for the latest court forms.'*
+            """)
+            st.link_button("Go to SGCourts", "https://www.judiciary.gov.sg/")
+
+        # Agile Feedback Loop moved to Overview
+        st.divider()
+        st.write("### 🗳️ Vote for the next Expansion")
+        st.write("Which area of law should we add to the Library next?")
+        c1, c2, c3 = st.columns(3)
+        c1.button("Criminal Law", use_container_width=True)
+        c2.button("Employment Disputes", use_container_width=True)
+        c3.button("Personal Injury", use_container_width=True)
+
+    # --- TAB 2: DIVORCE ---
     with tab_divorce:
         st.write("## Family Law: Divorce")
         
-        with st.expander("1. Women's Charter 1961", expanded=True):
+        st.subheader("⚖️ Laws")
+        with st.expander("Women's Charter 1961", expanded=True):
             st.markdown("""
             **What it entails:** The primary legislation governing marriage and divorce in Singapore.
-            **When to include:** When asking AI about the grounds for divorce (Section 95), child custody, or maintenance orders.
+            **When to include:** When asking AI about grounds for divorce (Section 95), child custody, or maintenance.
             """)
         
-        with st.expander("2. Family Justice Courts Practice Directions 2024"):
+        st.subheader("📝 Court Forms & Directions")
+        with st.expander("Family Justice Courts Practice Directions 2024"):
             st.markdown("""
-            **What it entails:** Procedural rules for how documents must be formatted and filed.
-            **When to include:** When drafting court documents or checking timelines for service of papers.
+            **What it entails:** Rules for formatting, filing, and timelines.
+            **When to include:** When drafting court documents or checking deadlines for service of papers.
             """)
 
-        # Agile Feedback Loop
-        st.divider()
-        st.write("## 🗳️ What should we include next?")
-        st.write("Our 'Fast-Track' model relies on user demand. Vote for the next area of law:")
-        
-        col_btn1, col_btn2, col_btn3 = st.columns(3)
-        with col_btn1: 
-            st.button("Criminal Law", use_container_width=True)
-        with col_btn2: 
-            st.button("Employment Disputes", use_container_width=True)
-        with col_btn3: 
-            st.button("Personal Injury", use_container_width=True)
-
+    # --- TAB 3: PROBATE ---
     with tab_probate:
         st.write("## Succession Law: Probate")
         
-        with st.expander("1. Probate and Administration Act 1934", expanded=True):
+        st.subheader("⚖️ Laws")
+        with st.expander("Probate and Administration Act 1934", expanded=True):
             st.markdown("""
             **What it entails:** Laws regarding the administration of a deceased person's estate.
-            **When to include:** When identifying the duties of an executor or the process of applying for a Grant of Probate.
+            **When to include:** When identifying duties of an executor or the process of applying for a Grant.
             """)
-            
-        with st.expander("2. Intestate Succession Act 1967"):
+        with st.expander("Intestate Succession Act 1967"):
             st.markdown("""
-            **What it entails:** Rules on how assets are distributed if there is **no Will**.
+            **What it entails:** Rules for asset distribution if there is **no Will**.
             **When to include:** When asking AI to calculate inheritance shares for family members.
             """)
 
-    with tab_general:
-        st.write("## General Legal Research")
-        st.info("For any area not listed above, always direct your AI to use **Singapore Statutes Online (SSO)**.")
+        st.subheader("📝 Court Forms & Directions")
+        with st.expander("FJC Practice Directions 2024 (Probate)"):
+            st.markdown("""
+            **What it entails:** Specific forms (e.g., Form 162) required for Probate applications.
+            **When to include:** When asking the AI to draft a Summons or a Generic Affidavit for probate matters.
+            """)
     
 # --- MODULE 4: COMMUNITY HUB & LIBRARY ---
 elif choice == "4. Prompt Library & Community Hub":
