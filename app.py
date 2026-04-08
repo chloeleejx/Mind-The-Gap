@@ -56,7 +56,7 @@ if choice == "1. Why This Guide Exists":
         """)
 
     # Transition to AI
-    st.subheader("The AI Revolution")
+    st.write("## The AI Revolution")
     st.markdown("The rise of generative AI changes everything. Using AI for legal research is not prohibited, provided you assume **full responsibility** for verifying information submitted to the Court.") 
 
     st.error("""
@@ -73,7 +73,7 @@ if choice == "1. Why This Guide Exists":
     col_mission, col_how = st.columns(2)
 
     with col_mission:
-        st.subheader("🎯 Our Mission")
+        st.write("## 🎯 Our Mission")
         st.write("""
         This Guide provides the **Knowledge Infrastructure** to empower you to use generative AI 
         effectively at the initial stage of your case. By doing the administrative heavy lifting 
@@ -81,7 +81,7 @@ if choice == "1. Why This Guide Exists":
         """)
 
     with col_how:
-        st.subheader("🛠️ How This Guide Works")
+        st.write("## 🛠️ How This Guide Works")
         st.info("""
         **1. Craft:** Build high-quality prompts using the **CTFR framework**.
         
@@ -92,7 +92,7 @@ if choice == "1. Why This Guide Exists":
 
     # Agile Feedback Loop
     st.divider()
-    st.subheader("🗳️ What should we build next?")
+    st.write("## 🗳️ What should we build next?")
     st.write("Our 'Fast-Track' model relies on user demand. Vote for the next area of law:")
     
     col_btn1, col_btn2, col_btn3 = st.columns(3)
@@ -137,15 +137,6 @@ elif choice == "2. Structuring a Good Prompt":
         """)
         st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy.")
 
-        st.write("## Task")
-        st.info("""
-        **Specify what do you want from the AI.** 
-            
-        Use **action verbs** such as 'Explain', 'Summarise', 'Draft' for better results.
-        """)
-        st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
-    
-    with col2:
         st.write("## Format")
         st.info("""
         **Set your expectations. How should the AI respond to best meet your needs?**
@@ -170,7 +161,16 @@ elif choice == "2. Structuring a Good Prompt":
             * **Level of Depth:** Ask for a 'high-level overview' for initial research or a 'comprehensive clause-by-clause analysis'
             * **Target Audience:** Tell the AI to write 'for the Court'
             """)
-
+            
+    with col2:
+        st.write("## Task")
+        st.info("""
+        **Specify what do you want from the AI.** 
+            
+        Use **action verbs** such as 'Explain', 'Summarise', 'Draft' for better results.
+        """)
+        st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
+    
         st.write("## Reference")
         st.info("**The source of truth.**")
         st.write("**Example:** Base your drafts on the forms uploaded. [Upload relevant court forms]")
@@ -239,7 +239,7 @@ elif choice == "5. Prompt Library & Community Hub":
 
     # --- TAB 1: SEARCHABLE LIBRARY ---
     with tab_library:
-        st.subheader("Editor-Approved Prompts")
+        st.write("## Editor-Approved Prompts")
         st.write("Browse and filter prompts that have been verified by our legal editors for accuracy and safety.")
 
         # Search and Filter Row
@@ -269,7 +269,7 @@ elif choice == "5. Prompt Library & Community Hub":
 
     # --- TAB 2: SUBMISSION PORTAL ---
     with tab_submit:
-        st.subheader("Share Your Success")
+        st.write("## Share Your Success")
         st.write("Found a prompt that worked? Submit it here. Our editors will review, anonymise, and publish it to help others.")
         
         with st.form("submission_form"):
