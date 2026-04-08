@@ -19,9 +19,8 @@ with st.sidebar:
     choice = st.radio("Navigation", [
         "1. Why This Guide Exists",
         "2. Structuring a Good Prompt",
-        "3. Case Study: Divorce",
-        "4. Case Study: Probate",
-        "5. Prompt Library & Community Hub"
+        "3. Reference Library",
+        "4. Prompt Library & Community Hub"
     ])
     st.markdown("---")
     st.write("**Version 1.0 (Beta)**")
@@ -177,64 +176,50 @@ elif choice == "2. Structuring a Good Prompt":
         st.info("**The source of truth.**")
         st.write("**Example:** Base your drafts on the forms uploaded. [Upload relevant court forms]")
 
-# --- MODULE 3: DIVORCE ---
-elif choice == "3. Case Study: Divorce":
-    st.title("📑 Area of Law: Divorce")
+# --- MODULE 3: REFERENCE ---
+elif choice == "3. Reference Library":
+    st.title("Reference Library")
+    st.write("Select an area of law to find authoritative references and guidance on how to use them in your AI prompts.")
+
+    tab_divorce, tab_probate, tab_general = st.tabs(["Divorce", "Probate", "General Civil"])
+
+    with tab_divorce:
+        st.write("## Family Law: Divorce")
+        
+        with st.expander("1. Women's Charter 1961", expanded=True):
+            st.markdown("""
+            **What it entails:** The primary legislation governing marriage and divorce in Singapore.
+            **When to include:** When asking AI about the grounds for divorce (Section 95), child custody, or maintenance orders.
+            """)
+        
+        with st.expander("2. Family Justice Courts Practice Directions 2024"):
+            st.markdown("""
+            **What it entails:** Procedural rules for how documents must be formatted and filed.
+            **When to include:** When drafting court documents or checking timelines for service of papers.
+            """)
+
+    with tab_probate:
+        st.write("## Succession Law: Probate")
+        
+        with st.expander("1. Probate and Administration Act 1934", expanded=True):
+            st.markdown("""
+            **What it entails:** Laws regarding the administration of a deceased person's estate.
+            **When to include:** When identifying the duties of an executor or the process of applying for a Grant of Probate.
+            """)
+            
+        with st.expander("2. Intestate Succession Act 1967"):
+            st.markdown("""
+            **What it entails:** Rules on how assets are distributed if there is **no Will**.
+            **When to include:** When asking AI to calculate inheritance shares for family members.
+
+            """)
+
+    with tab_general:
+        st.write("## General Legal Research")
+        st.info("For any area not listed above, always direct your AI to use **Singapore Statutes Online (SSO)**.")
     
-    tab1, tab2, tab3 = st.tabs(["Sample Prompt", "Trusted Sources", "Verification Checklist"])
-    
-    with tab1:
-        st.subheader("Initial Research Prompt")
-        st.code("""
-        CONTEXT: I am seeking a divorce in Singapore. My spouse does not agree.
-        TASK: Explain the 'Normal Track' process and the '1-Fact' requirement.
-        FORMAT: Plain English summary with a step-by-step timeline.
-        REFERENCE: Women's Charter 1961 and Singapore Courts (judiciary.gov.sg).
-        """, language="markdown")
-        st.caption("This prompt helps users understand the 'irretrievable breakdown' of marriage[cite: 158].")
-
-    with tab2:
-        st.subheader("Primary References")
-        st.write("* **Women's Charter 1961** (Section 95: Grounds for Divorce) [cite: 190]")
-        st.write("* **Family Justice Courts Practice Directions 2024** [cite: 198]")
-        st.write("* **MSF Family Assist Portal** [cite: 147]")
-
-    with tab3:
-        st.subheader("Audit Your AI Output")
-        st.checkbox("Did the AI mention the 3-year marriage rule? [cite: 130]")
-        st.checkbox("Did it distinguish between 'Interim' and 'Final' Judgment? [cite: 140, 141]")
-        st.checkbox("Did it mention the Mandatory Co-Parenting Programme (if children are involved)? [cite: 126]")
-
-# --- MODULE 4: PROBATE ---
-elif choice == "4. Case Study: Probate":
-    st.title("📜 Area of Law: Probate")
-    
-    tab1, tab2, tab3 = st.tabs(["Sample Prompt", "Trusted Sources", "Verification Checklist"])
-
-    with tab1:
-        st.subheader("Drafting Court Documents")
-        st.code("""
-        CONTEXT: I am challenging a Will in Singapore due to my father's lack of capacity (dementia).
-        TASK: Draft the content for a Summons (Form 154) and an Affidavit (Form 54).
-        FORMAT: Legal drafting style suitable for the Family Justice Courts.
-        REFERENCE: Family Justice Courts Practice Directions 2024.
-        """, language="markdown")
-        st.caption("Using AI for initial drafting reduces the billable hours lawyers spend on basic admin tasks[cite: 38].")
-
-    with tab2:
-        st.subheader("Primary References")
-        st.write("* **Probate and Administration Act 1934**")
-        st.write("* **Intestate Succession Act 1967** (If no Will exists)")
-        st.write("* **Family Justice Rules 2024** [cite: 246]")
-
-    with tab3:
-        st.subheader("Audit Your AI Output")
-        st.checkbox("Is the document titled 'Originating Application' rather than 'Petition'? [cite: 231]")
-        st.checkbox("Has the AI flagged 'Missing Information' like specific medical dates? [cite: 284, 287]")
-        st.checkbox("Does the draft follow the 2024 Practice Direction numbering? [cite: 236]")
-
-# --- MODULE 5: COMMUNITY HUB & LIBRARY ---
-elif choice == "5. Prompt Library & Community Hub":
+# --- MODULE 4: COMMUNITY HUB & LIBRARY ---
+elif choice == "4. Prompt Library & Community Hub":
     st.title("Prompt Library & Community Hub")
     
     tab_library, tab_submit = st.tabs(["📚 Prompt Library", "📤 Submit a Prompt"])
