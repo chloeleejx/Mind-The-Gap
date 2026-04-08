@@ -138,12 +138,12 @@ elif choice == "2. Structuring a Good Prompt":
         st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy.")
 
         st.subheader("Task")
-            st.info("""
-            **Specify what do you want from the AI.** 
+        st.info("""
+        **Specify what do you want from the AI.** 
             
-            Use **action verbs** such as 'Explain', 'Summarise', 'Draft' for better results.
-            """)
-            st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
+        Use **action verbs** such as 'Explain', 'Summarise', 'Draft' for better results.
+        """)
+        st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
     
     with col2:
         st.subheader("Format")
