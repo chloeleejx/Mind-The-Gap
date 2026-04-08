@@ -137,48 +137,39 @@ elif choice == "2. Structuring a Good Prompt":
         """)
         st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy.")
 
-    with col2:
         st.subheader("Task")
-        st.info("""
-        **Specify what do you want from the AI.** 
-        
-        Use **action verbs** such as 'Explain', 'Summarise', 'Draft' for better results.
-        """)
-        st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
-
+            st.info("""
+            **Specify what do you want from the AI.** 
+            
+            Use **action verbs** such as 'Explain', 'Summarise', 'Draft' for better results.
+            """)
+            st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
+    
+    with col2:
         st.subheader("Format")
         st.info("""
         **Set your expectations. How should the AI respond to best meet your needs?**
 
-        Consider including **"use plain English"** when asking AI to explain the laws to avoid unnecessary burden by legal jargon.
+        A well-defined format ensures the output is immediately useful.
         
-        Consider to specify the following based on your needs: 
-        * Language
-        * Visual aids
-        * Level of depth
-        * Tone of voice
-        * Word limit
         """)
         st.write("**Example:** Please use language suitable for addressing the Court.")
 
-        st.write("### 🛠️ Tailor your output:")
-        # Using columns here makes the list feel more professional and less like a 'notebook'
+        st.write("#### Consider specifying the following based on your needs:")
         col_f1, col_f2 = st.columns(2)
 
         with col_f1:
             st.markdown("""
-            * **Language & Tone:** Specify 'Plain English' for understanding or 'Formal Legal Tone' for court drafts.
-            * **Visual Aids:** Request 'a 3-column table', 'a step-by-step timeline', or 'a bulleted checklist'.
-            * **Word Limit:** Set a '200-word executive summary' to avoid long, rambling AI responses.
+            * **Language & Tone:** Specify 'Plain English' for better understanding of the laws
+            * **Visual Aids:** Request 'a table' or 'a step-by-step timeline'
+            * **Word Limit:** Avoid long, rambling AI responses
             """)
 
         with col_f2:
             st.markdown("""
-            * **Level of Depth:** Ask for a 'high-level overview' for initial research or a 'comprehensive clause-by-clause analysis'.
-            * **Target Audience:** Tell the AI to write 'for a judge' or 'for a layperson'.
+            * **Level of Depth:** Ask for a 'high-level overview' for initial research or a 'comprehensive clause-by-clause analysis'
+            * **Target Audience:** Tell the AI to write 'for the Court'
             """)
-
-        st.success("**Pro-Tip:** If you are preparing for a court hearing, ask the AI to format its response as 'speaking notes' to help you present your points clearly.")
 
         st.subheader("Reference")
         st.info("**The source of truth.**")
