@@ -103,14 +103,14 @@ if choice == "1. Why This Guide Exists":
     with col_btn3: 
         st.button("Criminal Law", use_container_width=True)
 
-# --- MODULE 2: FRAMEWORK & PRIVACY ---
+# --- MODULE 2: CTFR Framework ---
 elif choice == "2. Structuring a Good Prompt":
     st.title("Structuring a Good Prompt using the CTFR Framework")
     st.write("A prompt is only as good as its structure. Follow the **Context-Task-Format-Reference** framework to structure a good prompt.")
     
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader("Context")
+        st.write("## Context")
         st.info("""
         **Tell your story.**
         It is a good idea to include the following:
@@ -137,7 +137,7 @@ elif choice == "2. Structuring a Good Prompt":
         """)
         st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy.")
 
-        st.subheader("Task")
+        st.write("## Task")
         st.info("""
         **Specify what do you want from the AI.** 
             
@@ -146,7 +146,7 @@ elif choice == "2. Structuring a Good Prompt":
         st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
     
     with col2:
-        st.subheader("Format")
+        st.write("## Format")
         st.info("""
         **Set your expectations. How should the AI respond to best meet your needs?**
 
@@ -155,7 +155,7 @@ elif choice == "2. Structuring a Good Prompt":
         """)
         st.write("**Example:** Please use language suitable for addressing the Court.")
 
-        st.write("#### Consider specifying the following based on your needs:")
+        st.write("### Consider specifying the following based on your needs:")
         col_f1, col_f2 = st.columns(2)
 
         with col_f1:
@@ -171,7 +171,7 @@ elif choice == "2. Structuring a Good Prompt":
             * **Target Audience:** Tell the AI to write 'for the Court'
             """)
 
-        st.subheader("Reference")
+        st.write("## Reference")
         st.info("**The source of truth.**")
         st.write("**Example:** Base your drafts on the forms uploaded. [Upload relevant court forms]")
 
