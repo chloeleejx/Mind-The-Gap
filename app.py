@@ -168,19 +168,6 @@ elif choice == "3. Reference Library":
     st.title("Reference Library")
     st.write("Select an area of law to find authoritative references and guidance on how to use them in your AI prompts.")
 
-    # Agile Feedback Loop
-    st.divider()
-    st.write("## 🗳️ What should we include next?")
-    st.write("Our 'Fast-Track' model relies on user demand. Vote for the next area of law:")
-    
-    col_btn1, col_btn2, col_btn3 = st.columns(3)
-    with col_btn1: 
-        st.button("Criminal Law", use_container_width=True)
-    with col_btn2: 
-        st.button("Employment Disputes", use_container_width=True)
-    with col_btn3: 
-        st.button("Personal Injury", use_container_width=True)
-
     tab_divorce, tab_probate, tab_general = st.tabs(["Divorce", "Probate", "General Civil"])
 
     with tab_divorce:
@@ -198,6 +185,19 @@ elif choice == "3. Reference Library":
             **When to include:** When drafting court documents or checking timelines for service of papers.
             """)
 
+        # Agile Feedback Loop
+        st.divider()
+        st.write("## 🗳️ What should we include next?")
+        st.write("Our 'Fast-Track' model relies on user demand. Vote for the next area of law:")
+        
+        col_btn1, col_btn2, col_btn3 = st.columns(3)
+        with col_btn1: 
+            st.button("Criminal Law", use_container_width=True)
+        with col_btn2: 
+            st.button("Employment Disputes", use_container_width=True)
+        with col_btn3: 
+            st.button("Personal Injury", use_container_width=True)
+
     with tab_probate:
         st.write("## Succession Law: Probate")
         
@@ -211,7 +211,6 @@ elif choice == "3. Reference Library":
             st.markdown("""
             **What it entails:** Rules on how assets are distributed if there is **no Will**.
             **When to include:** When asking AI to calculate inheritance shares for family members.
-
             """)
 
     with tab_general:
