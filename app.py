@@ -89,19 +89,6 @@ if choice == "1. Why This Guide Exists":
         **3. Check:** Audit every response against **trusted primary checklists**.
         """)
 
-    # Agile Feedback Loop
-    st.divider()
-    st.write("## 🗳️ What should we build next?")
-    st.write("Our 'Fast-Track' model relies on user demand. Vote for the next area of law:")
-    
-    col_btn1, col_btn2, col_btn3 = st.columns(3)
-    with col_btn1: 
-        st.button("Small Claims Diputes", use_container_width=True)
-    with col_btn2: 
-        st.button("Employment Disputes", use_container_width=True)
-    with col_btn3: 
-        st.button("Criminal Law", use_container_width=True)
-
 # --- MODULE 2: CTFR Framework ---
 elif choice == "2. Structuring a Good Prompt":
     st.title("Structuring a Good Prompt using the CTFR Framework")
@@ -180,6 +167,19 @@ elif choice == "2. Structuring a Good Prompt":
 elif choice == "3. Reference Library":
     st.title("Reference Library")
     st.write("Select an area of law to find authoritative references and guidance on how to use them in your AI prompts.")
+
+    # Agile Feedback Loop
+    st.divider()
+    st.write("## 🗳️ What should we include next?")
+    st.write("Our 'Fast-Track' model relies on user demand. Vote for the next area of law:")
+    
+    col_btn1, col_btn2, col_btn3 = st.columns(3)
+    with col_btn1: 
+        st.button("Criminal Law", use_container_width=True)
+    with col_btn2: 
+        st.button("Employment Disputes", use_container_width=True)
+    with col_btn3: 
+        st.button("Personal Injury", use_container_width=True)
 
     tab_divorce, tab_probate, tab_general = st.tabs(["Divorce", "Probate", "General Civil"])
 
