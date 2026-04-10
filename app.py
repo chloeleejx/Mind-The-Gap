@@ -90,16 +90,16 @@ elif choice == "2. How to Use This Guide":
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.info("### Step 1: Learn the Basics")
-        st.write("""
+        st.write("## Step 1: Learn the Basics")
+        st.info("""
         **Go to:** *Structuring a Good Prompt*
         
         Use the **CTFR Framework** to build your prompt.
         """)
 
     with col2:
-        st.info("### Step 2: Refer and Verify")
-        st.write("""
+        st.write("## Step 2: Refer and Verify")
+        st.success("""
         **Go to:** *Reference Library*
         
         Find the relevant Legislation or Court Form to refer to in your prompt.
@@ -107,8 +107,8 @@ elif choice == "2. How to Use This Guide":
         """)
 
     with col3:
-        st.info("### Step 3: Search for Samples")
-        st.write("""
+        st.write("## Step 3: Search for Samples")
+        st.warning("""
         **Go to:** *Prompt Library*
         
         Search for samples that are applicable to your situation.
