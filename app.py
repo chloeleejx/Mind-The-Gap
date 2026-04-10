@@ -4,7 +4,7 @@ import pandas as pd # For handling the library data
 # Page Configuration
 st.set_page_config(page_title="Mind the Gap | Knowledge Hub", layout="wide")
 
-#CSS
+# --- SINGAPORE COURTS THEME CSS ---
 st.markdown("""
     <style>
     /* Import professional font */
@@ -13,50 +13,72 @@ st.markdown("""
     /* Global Styles */
     html, body, [class*="css"] {
         font-family: 'Inter', sans-serif;
-        color: #333333;
+        color: #2D2D2D;
     }
 
-    /* Professional Midnight Blue Sidebar */
+    /* SG Courts Midnight Blue Sidebar */
     [data-testid="stSidebar"] {
-        background-color: #1a2a6c;
+        background-color: #002B4B; /* Official Deep Navy */
         color: white;
     }
     [data-testid="stSidebar"] * {
         color: white !important;
     }
 
-    /* Clean White Main Background */
+    /* Main Background */
     .stApp {
-        background-color: #ffffff;
+        background-color: #FFFFFF;
     }
 
-    /* Gov-style "Cards" for content sections */
-    div.stBox {
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 20px;
-        background-color: #f9f9f9;
+    /* SGCourts Info Boxes (Light Grey with Navy Border) */
+    div.stInfo {
+        background-color: #F4F7F9;
+        border-left: 5px solid #002B4B;
+        color: #002B4B;
     }
 
-    /* Primary Buttons (Midnight Blue) */
+    /* SGCourts Warning/Error Boxes */
+    div.stError {
+        background-color: #FFF5F5;
+        border-left: 5px solid #C53030;
+    }
+
+    /* Primary Action Buttons (Midnight Blue) */
     .stButton>button {
-        background-color: #1a2a6c;
+        background-color: #002B4B;
         color: white;
-        border-radius: 4px;
+        border-radius: 2px;
         border: none;
-        padding: 10px 24px;
-        transition: 0.3s;
+        padding: 12px 28px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
     .stButton>button:hover {
-        background-color: #2a3a7c;
+        background-color: #004071;
         color: white;
+        border: none;
     }
 
-    /* Custom Header Underline */
+    /* Institutional Headers with Gold Accent */
     h1 {
-        border-bottom: 3px solid #f9b233; /* Singapore Gold accent */
-        padding-bottom: 10px;
-        color: #1a2a6c;
+        color: #002B4B;
+        font-weight: 700;
+        border-bottom: 4px solid #B2955A; /* Heritage Gold Accent */
+        padding-bottom: 12px;
+        margin-bottom: 25px;
+    }
+    
+    h2, h3 {
+        color: #002B4B;
+        font-weight: 600;
+    }
+
+    /* Card Styling for Library */
+    .stExpander {
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 4px !important;
+        background-color: white !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -86,9 +108,10 @@ df = pd.DataFrame(prompt_data)
 
 # --- MODULE 1: MISSION ---
 if choice == "1. Why This Guide Exists":
-    st.markdown('<div style="background-color: #1a2a6c; padding: 40px; border-radius: 10px; margin-bottom: 30px;">'
-                '<h1 style="color: white; border: none;">Mind the Gap</h1>'
-                '<p style="color: #f9f9f9; font-size: 18px;">Bridging the Justice Gap for Middle-income Earners.</p>'
+    # Hero Banner with Official Navy
+    st.markdown('<div style="background-color: #002B4B; padding: 45px; border-radius: 4px; margin-bottom: 35px; border-left: 10px solid #B2955A;">'
+                '<h1 style="color: white; border: none; margin: 0; padding: 0;">Mind the Gap</h1>'
+                '<p style="color: #E2E8F0; font-size: 1.1rem; margin-top: 10px;">Bridging the Justice Gap for Middle-income Earners in Singapore.</p>'
                 '</div>', unsafe_allow_html=True)
     
     # Using a container to group the problem statement
