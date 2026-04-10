@@ -197,7 +197,7 @@ elif choice == "3. Structuring a Good Prompt":
 # --- MODULE 4: REFERENCE ---
 elif choice == "4. Reference Library":
     st.title("Reference Library")
-    st.write("Select an area of law to find authoritative references and guidance on how to use them in your AI prompts.")
+    st.write("Select an area of law to find primary sources and guidance on how to use them in your AI prompts.")
 
     # Creating the Tabs
     tab_overview, tab_divorce, tab_probate = st.tabs(["Overview", "Divorce", "Probate"])
@@ -206,24 +206,28 @@ elif choice == "4. Reference Library":
     with tab_overview:
         st.write("## How to use the Library")
         st.markdown("""
-        To reduce 'AI hallucinations,' your prompt should always direct the AI to a specific **Source of Truth**. 
+        To reduce 'AI hallucinations,' your prompt should always direct the AI to primary sources. 
         This module organizes references into two categories:
-        1. **Statutory Laws:** The 'What' (The actual laws and rights).
-        2. **Court Forms & Directions:** The 'How' (How to file and format documents).
         """)
 
         col_sso, col_courts = st.columns(2)
         with col_sso:
-            st.info("### Singapore Statutes Online (SSO)")
+            st.write("## Laws")
+            st.write("Singapore Statutes Online (SSO)")
             st.write("""
             **What it is:** The official government portal for all Singapore legislation.
             **When to use:** If you are unsure of the specific Act, tell the AI: 
-            *'Refer only to the most recent statutes on sso.agc.gov.sg.'*
+            *'Refer only to the most recent statutes on Singapore Statutes Online.'*
             """)
             st.link_button("Go to SSO", "https://sso.agc.gov.sg/")
 
+            st.write("Case Law")
+            st.link_button("Go to SGCourts", "https://www.judiciary.gov.sg/judgments/judgments-case-summaries")
+
         with col_courts:
-            st.info("### Singapore Courts Website")
+            st.write("## Procedures")
+            st.write("Rules of Court 2021")
+            st.write("Practice Directions)
             st.write("""
             **What it is:** The central resource for Judiciary forms and Practice Directions.
             **When to use:** When you need the AI to draft a document or explain court procedure. 
