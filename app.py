@@ -90,7 +90,7 @@ elif choice == "2. How to Use This Guide":
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.write("## Step 1: Learn the Basics")
+        st.write("## Learn the Basics")
         st.info("""
         **Go to:** *Structuring a Good Prompt*
         
@@ -98,7 +98,7 @@ elif choice == "2. How to Use This Guide":
         """)
 
     with col2:
-        st.write("## Step 2: Refer and Verify")
+        st.write("## Refer and Verify")
         st.success("""
         **Go to:** *Reference Library*
         
@@ -107,7 +107,7 @@ elif choice == "2. How to Use This Guide":
         """)
 
     with col3:
-        st.write("## Step 3: Search for Samples")
+        st.write("## Search for Samples")
         st.warning("""
         **Go to:** *Prompt Library*
         
