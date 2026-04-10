@@ -18,9 +18,10 @@ with st.sidebar:
     st.markdown("---")
     choice = st.radio("Navigation", [
         "1. Why This Guide Exists",
-        "2. Structuring a Good Prompt",
-        "3. Reference Library",
-        "4. Prompt Library & Community Hub"
+        "2. How to Use This Guide",
+        "3. Structuring a Good Prompt",
+        "4. Reference Library",
+        "5. Prompt Library & Community Hub"
     ])
     st.markdown("---")
     st.write("**Version 1.0 (Beta)**")
@@ -64,33 +65,57 @@ if choice == "1. Why This Guide Exists":
     * Do you truly understand the output it generates?
     * Most importantly, how do you know the information is **correct**? 
     
-    Without verification, are you willing to risk including wrong information in your court documents?
+    Without verification, are you willing to risk relying on or including wrong information in your court documents?
     """)
 
-    # Mission and Framework using Columns for better flow
     st.divider()
-    col_mission, col_how = st.columns(2)
+    st.write("## 🎯 Our Mission")
+    st.write("""
+    This Guide provides the **Knowledge Infrastructure** to empower you to use generative AI 
+    effectively at the initial stage of your case. By doing the administrative heavy lifting 
+    yourself, you can save your limited financial resources for high-level legal strategy and advocacy.
+        """)
+    
+    st.success("Please refer to 'How to Use This Guide' in the sidebar to get started.")
 
-    with col_mission:
-        st.write("## 🎯 Our Mission")
+# --- MODULE 2: HOW TO USE THIS GUIDE ---
+elif choice == "2. How to Use This Guide":
+    st.title("How to Use This Guide")
+    
+    st.markdown("""
+    This guide is a **Knowledge Infrastructure**. 
+    It teaches you how to get the response you need from AI and verify it against trusted primary sources.
+    """)
+
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.info("### Step 1: Learn the Basics")
         st.write("""
-        This Guide provides the **Knowledge Infrastructure** to empower you to use generative AI 
-        effectively at the initial stage of your case. By doing the administrative heavy lifting 
-        yourself, you can save your limited financial resources for high-level legal strategy and advocacy.
+        **Go to:** *Structuring a Good Prompt*
+        
+        Use the **CTFR Framework** to build your prompt.
         """)
 
-    with col_how:
-        st.write("## 🛠️ How This Guide Works")
-        st.info("""
-        **1. Craft:** Build high-quality prompts using the **CTFR framework**.
+    with col2:
+        st.info("### Step 2: Refer and Verify")
+        st.write("""
+        **Go to:** *Reference Library*
         
-        **2. Refer:** Ground your AI in authoritative **Singaporean legal sources**.
-        
-        **3. Check:** Audit every response against **trusted primary checklists**.
+        Find the relevant Legislation or Court Form to refer to in your prompt.
+        Verify the AI output against the original source.
         """)
 
-# --- MODULE 2: CTFR Framework ---
-elif choice == "2. Structuring a Good Prompt":
+    with col3:
+        st.info("### Step 3: Search for Samples")
+        st.write("""
+        **Go to:** *Prompt Library*
+        
+        Search for samples that are applicable to your situation.
+        """)
+        
+# --- MODULE 3: CTFR Framework ---
+elif choice == "3. Structuring a Good Prompt":
     st.title("Structuring a Good Prompt using the CTFR Framework")
     st.write("A prompt is only as good as its structure. Follow the **Context-Task-Format-Reference** framework to structure a good prompt.")
     
@@ -163,8 +188,8 @@ elif choice == "2. Structuring a Good Prompt":
         st.info("**The source of truth.**")
         st.write("**Example:** Base your drafts on the forms uploaded. [Upload relevant court forms]")
 
-# --- MODULE 3: REFERENCE ---
-elif choice == "3. Reference Library":
+# --- MODULE 4: REFERENCE ---
+elif choice == "4. Reference Library":
     st.title("Reference Library")
     st.write("Select an area of law to find authoritative references and guidance on how to use them in your AI prompts.")
 
@@ -250,8 +275,8 @@ elif choice == "3. Reference Library":
             **When to include:** When asking the AI to draft a Summons or a Generic Affidavit for probate matters.
             """)
     
-# --- MODULE 4: COMMUNITY HUB & LIBRARY ---
-elif choice == "4. Prompt Library & Community Hub":
+# --- MODULE 5: COMMUNITY HUB & LIBRARY ---
+elif choice == "5. Prompt Library & Community Hub":
     st.title("Prompt Library & Community Hub")
     
     tab_library, tab_submit = st.tabs(["📚 Prompt Library", "📤 Submit a Prompt"])
