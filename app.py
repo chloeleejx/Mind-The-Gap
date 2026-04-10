@@ -150,6 +150,16 @@ elif choice == "3. Structuring a Good Prompt":
         
         st.success("**Anonymisation Tip:** Use placeholders like '[Deceased Name]' or '[Property Address]' to keep the context without risking your data privacy.")
 
+        
+    with col2:
+        st.write("## Task")
+        st.info("""
+        **Specify what do you want from the AI.** 
+            
+        Use **action verbs** such as 'Explain', 'Summarise', 'Draft' for better results.
+        """)
+        st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
+
         st.write("## Format")
         st.info("""
         **Set your expectations. How should the AI respond to best meet your needs?**
@@ -175,15 +185,6 @@ elif choice == "3. Structuring a Good Prompt":
             * **Target Audience:** Tell the AI to write 'for the Court'
             """)
             
-    with col2:
-        st.write("## Task")
-        st.info("""
-        **Specify what do you want from the AI.** 
-            
-        Use **action verbs** such as 'Explain', 'Summarise', 'Draft' for better results.
-        """)
-        st.write("**Example: Draft** the court documents to be filed with the Singapore Court and **highlight** any missing information that I need to provide.")
-    
         st.write("## Reference")
         st.info("**The source of truth.**")
         st.write("**Example:** Base your drafts on the forms uploaded. [Upload relevant court forms]")
