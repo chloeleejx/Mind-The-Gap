@@ -227,7 +227,7 @@ elif choice == "4. Reference Library":
         with col_courts:
             st.write("## Procedures")
             st.write("Rules of Court 2021")
-            st.write("Practice Directions)
+            st.write("Practice Directions")
             st.write("""
             **What it is:** The central resource for Judiciary forms and Practice Directions.
             **When to use:** When you need the AI to draft a document or explain court procedure. 
