@@ -4,11 +4,60 @@ import pandas as pd # For handling the library data
 # Page Configuration
 st.set_page_config(page_title="Mind the Gap | Knowledge Hub", layout="wide")
 
-# Custom CSS for professional branding
+#CSS
 st.markdown("""
     <style>
-    .main { background-color: #f8f9fa; }
-    .stAlert { border-radius: 8px; }
+    /* Import professional font */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    /* Global Styles */
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif;
+        color: #333333;
+    }
+
+    /* Professional Midnight Blue Sidebar */
+    [data-testid="stSidebar"] {
+        background-color: #1a2a6c;
+        color: white;
+    }
+    [data-testid="stSidebar"] * {
+        color: white !important;
+    }
+
+    /* Clean White Main Background */
+    .stApp {
+        background-color: #ffffff;
+    }
+
+    /* Gov-style "Cards" for content sections */
+    div.stBox {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #f9f9f9;
+    }
+
+    /* Primary Buttons (Midnight Blue) */
+    .stButton>button {
+        background-color: #1a2a6c;
+        color: white;
+        border-radius: 4px;
+        border: none;
+        padding: 10px 24px;
+        transition: 0.3s;
+    }
+    .stButton>button:hover {
+        background-color: #2a3a7c;
+        color: white;
+    }
+
+    /* Custom Header Underline */
+    h1 {
+        border-bottom: 3px solid #f9b233; /* Singapore Gold accent */
+        padding-bottom: 10px;
+        color: #1a2a6c;
+    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -37,7 +86,10 @@ df = pd.DataFrame(prompt_data)
 
 # --- MODULE 1: MISSION ---
 if choice == "1. Why This Guide Exists":
-    st.title("Why This Guide Exists")
+    st.markdown('<div style="background-color: #1a2a6c; padding: 40px; border-radius: 10px; margin-bottom: 30px;">'
+                '<h1 style="color: white; border: none;">Mind the Gap</h1>'
+                '<p style="color: #f9f9f9; font-size: 18px;">Bridging the Justice Gap for Middle-income Earners.</p>'
+                '</div>', unsafe_allow_html=True)
     
     # Using a container to group the problem statement
     with st.container():
