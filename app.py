@@ -187,8 +187,9 @@ elif choice == "3. Structuring a Good Prompt":
             
     st.write("## Reference")
     st.info("""
-    **Refer to trusted primary sources for more accurate and targeted response that meets your needs.
-    Although this improves the accuracy and reliability of the AI output, you MUST verify it against trusted primary sources before relying on or including the information in your court document.
+    **Refer to trusted primary sources for more accurate and targeted response that meets your needs.**
+    
+    Although this improves the accuracy and reliability of the AI output, you **MUST** verify it against trusted primary sources before relying on or including the information in your court document.
     """)
     st.write("**Example:** Base your drafts on the forms uploaded. [Upload relevant court forms]")
     st.success("Please refer to 'Reference Library' in the sidebar to learn more about trusted primary sources.")
