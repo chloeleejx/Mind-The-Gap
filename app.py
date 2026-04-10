@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd # For handling the library data
+st.markdown('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">', unsafe_allow_html=True)
 
 # Page Configuration
 st.set_page_config(page_title="Mind the Gap | Knowledge Hub", layout="wide")
@@ -69,7 +70,7 @@ if choice == "1. Why This Guide Exists":
     """)
 
     st.divider()
-    st.write("## 🎯 Our Mission")
+    st.markdown('<i class="fa-solid fa-gavel"></i> **Our Mission**', unsafe_allow_html=True)
     st.write("""
     This Guide provides the **Knowledge Infrastructure** to empower you to use generative AI 
     effectively at the initial stage of your case. By doing the administrative heavy lifting 
