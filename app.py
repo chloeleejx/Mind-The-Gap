@@ -56,7 +56,7 @@ if choice == "1. Why This Guide Exists":
         """)
 
     # Transition to AI
-    st.write("##🤖 The AI Revolution")
+    st.write("## 🤖 The AI Revolution")
     st.markdown("The rise of generative AI changes everything. Using AI for legal research is not prohibited, provided you assume **full responsibility** for verifying information submitted to the Court.") 
 
     st.error("""
@@ -69,7 +69,7 @@ if choice == "1. Why This Guide Exists":
     """)
 
     st.divider()
-    st.write("##🎯 Our Mission")
+    st.write("## 🎯 Our Mission")
     st.write("""
     This Guide provides the **Knowledge Infrastructure** to empower you to use generative AI 
     effectively at the initial stage of your case. By doing the administrative heavy lifting 
