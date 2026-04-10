@@ -107,7 +107,7 @@ elif choice == "2. How to Use This Guide":
         """)
 
     with col3:
-        st.write("## Search for Samples")
+        st.write("## Find Samples")
         st.warning("""
         **Go to:** *Prompt Library*
         
